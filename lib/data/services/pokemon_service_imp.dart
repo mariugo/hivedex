@@ -6,16 +6,20 @@ import 'package:hivedex/data/services/pokemon_service.dart';
 import 'package:http/http.dart' as http;
 
 class PokemonServiceImp extends PokemonService {
-  static const limit = 20;
+  static const limit = 21;
 
   @override
   Future<List<Pokemon>> getPokemons(int offset) async {
+    //print('this is get services');
     try {
       final response =
           await http.get(Uri.parse('${baseUrl}offset=$offset&limit=$limit'));
+      //print('getting');
       final pokemonsResponse = jsonDecode(response.body) as Map;
       final pokemonsResults = pokemonsResponse['results'] as List;
 
+      // pokemonsResults.forEach((poke) {
+      // });
       final List<Pokemon> pokemons = [];
 
       for (var pokemon in pokemonsResults) {
