@@ -1,39 +1,30 @@
-// ignore_for_file: overridden_fields, annotate_overrides
+// ignore_for_file: overridden_fields, annotate_overrides, prefer_const_constructors_in_immutables, must_be_immutable
 
 import 'package:equatable/equatable.dart';
 
 import 'package:hivedex/data/models/pokemon.dart';
 
-class PokemonState extends Equatable {
+class PokemonsState extends Equatable {
   final List<Pokemon> pokemons;
-  final List<Pokemon> favoritePokemons;
-
-  const PokemonState({
-    this.pokemons = const [],
-    this.favoritePokemons = const [],
-  });
+  final List<Pokemon> favouritePokemons;
+  PokemonsState({this.pokemons = const [], this.favouritePokemons = const []});
 
   @override
   List<Object?> get props => [pokemons];
 }
 
-class PokemonLoaded extends PokemonState {
+class PokemonLoaded extends PokemonsState {
   final List<Pokemon> pokemons;
 
   final Pokemon? loadedPokemon;
-
-  const PokemonLoaded({
-    required this.pokemons,
-    this.loadedPokemon,
-  });
+  PokemonLoaded({required this.pokemons, this.loadedPokemon});
 }
 
-class PokemonLoading extends PokemonState {
+class PokemonLoading extends PokemonsState {
   final List<Pokemon> pokemons;
-  final bool isFirstFetched;
-
-  const PokemonLoading({
+  bool isFirstFetch;
+  PokemonLoading({
     required this.pokemons,
-    this.isFirstFetched = false,
+    this.isFirstFetch = false,
   });
 }

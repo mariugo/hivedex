@@ -5,16 +5,16 @@ import 'package:hivedex/data/models/pokemon.dart';
 import 'package:hivedex/data/repository/pokemon_repository.dart';
 import 'package:hivedex/data/storage/local_storage.dart';
 
-class PokemonsBloc extends Bloc<PokemonsEvent, PokemonState> {
+class PokemonsBloc extends Bloc<PokemonsEvent, PokemonsState> {
   final PokemonRepository pokemonRepository;
   int offset = 0;
 
-  PokemonsBloc(this.pokemonRepository) : super(const PokemonState()) {
+  PokemonsBloc(this.pokemonRepository) : super(PokemonsState()) {
     on<GetPokemons>(_getAllPokemons);
     on<SwitchFavoritePokemon>(_switchFavorite);
   }
 
-  void _getAllPokemons(GetPokemons event, Emitter<PokemonState> emit) async {
+  void _getAllPokemons(GetPokemons event, Emitter<PokemonsState> emit) async {
     final currentState = state;
 
     if (state is PokemonLoading) return;
@@ -26,7 +26,7 @@ class PokemonsBloc extends Bloc<PokemonsEvent, PokemonState> {
     emit(
       PokemonLoading(
         pokemons: oldPokemons,
-        isFirstFetched: offset == 0,
+        isFirstFetch: offset == 0,
       ),
     );
 
@@ -43,7 +43,7 @@ class PokemonsBloc extends Bloc<PokemonsEvent, PokemonState> {
   }
 
   void _switchFavorite(
-      SwitchFavoritePokemon event, Emitter<PokemonState> emit) async {
+      SwitchFavoritePokemon event, Emitter<PokemonsState> emit) async {
     final box = LocalStorage.getPokemonBox();
 
     if (!event.pokemon.isFavorite) {
