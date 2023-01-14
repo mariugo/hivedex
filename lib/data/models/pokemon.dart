@@ -37,13 +37,13 @@ class Pokemon extends HiveObject {
   final int attack;
 
   @HiveField(10)
-  final int defence;
+  final int defense;
 
   @HiveField(11)
   final int specialAttack;
 
   @HiveField(12)
-  final int specialDefence;
+  final int specialDefense;
 
   @HiveField(13)
   final int speed;
@@ -58,10 +58,10 @@ class Pokemon extends HiveObject {
       this.isFavorite = false,
       required this.height,
       required this.attack,
-      required this.defence,
+      required this.defense,
       required this.hp,
       required this.specialAttack,
-      required this.specialDefence,
+      required this.specialDefense,
       required this.weight});
 
   Map<String, dynamic> toMap() {
@@ -79,9 +79,9 @@ class Pokemon extends HiveObject {
     result.addAll({'weight': weight});
     result.addAll({'hp': hp});
     result.addAll({'attack': attack});
-    result.addAll({'defence': defence});
+    result.addAll({'defence': defense});
     result.addAll({'specialAttack': specialAttack});
-    result.addAll({'specialDefence': specialDefence});
+    result.addAll({'specialDefence': specialDefense});
     result.addAll({'speed': speed});
 
     return result;
@@ -99,9 +99,9 @@ class Pokemon extends HiveObject {
       weight: map['weight']?.toInt() ?? 0,
       hp: map['hp']?.toInt() ?? 0,
       attack: map['attack']?.toInt() ?? 0,
-      defence: map['defence']?.toInt() ?? 0,
+      defense: map['defence']?.toInt() ?? 0,
       specialAttack: map['specialAttack']?.toInt() ?? 0,
-      specialDefence: map['specialDefence']?.toInt() ?? 0,
+      specialDefense: map['specialDefence']?.toInt() ?? 0,
       speed: map['speed']?.toInt() ?? 0,
     );
   }
@@ -119,8 +119,8 @@ class Pokemon extends HiveObject {
         weight = map['weight'],
         hp = map['hp'],
         attack = map['attack'],
-        defence = map['defence'],
+        defense = map['defence'],
         specialAttack = map['specialAttack'],
-        specialDefence = map['specialDefence'],
+        specialDefense = map['specialDefence'],
         speed = map['speed'];
 }
