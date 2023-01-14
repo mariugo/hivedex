@@ -26,10 +26,10 @@ class PokemonAdapter extends TypeAdapter<Pokemon> {
       isFavorite: fields[4] as bool,
       height: fields[6] as int,
       attack: fields[9] as int,
-      defence: fields[10] as int,
+      defense: fields[10] as int,
       hp: fields[8] as int,
       specialAttack: fields[11] as int,
-      specialDefence: fields[12] as int,
+      specialDefense: fields[12] as int,
       weight: fields[7] as int,
     );
   }
@@ -59,11 +59,11 @@ class PokemonAdapter extends TypeAdapter<Pokemon> {
       ..writeByte(9)
       ..write(obj.attack)
       ..writeByte(10)
-      ..write(obj.defence)
+      ..write(obj.defense)
       ..writeByte(11)
       ..write(obj.specialAttack)
       ..writeByte(12)
-      ..write(obj.specialDefence)
+      ..write(obj.specialDefense)
       ..writeByte(13)
       ..write(obj.speed);
   }
