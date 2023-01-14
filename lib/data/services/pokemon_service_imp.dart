@@ -6,7 +6,7 @@ import 'package:hivedex/data/services/pokemon_service.dart';
 import 'package:http/http.dart' as http;
 
 class PokemonServiceImp extends PokemonService {
-  static const limit = 21;
+  static const limit = 20;
 
   @override
   Future<List<Pokemon>> getPokemons(int offset) async {
@@ -38,6 +38,7 @@ class PokemonServiceImp extends PokemonService {
             specialDefense: responseBody['stats'][4]['base_stat'],
             weight: responseBody['weight'],
             speed: responseBody['stats'][5]['base_stat'],
+            normalAbility: responseBody['abilities'][0]['ability']['name'],
           );
 
           pokemons.add(pokemonDetails);
