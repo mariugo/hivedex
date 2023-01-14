@@ -16,6 +16,7 @@ void main() {
     specialDefense: 30,
     weight: 100,
     isFavorite: true,
+    normalAbility: '',
   );
 
   group('Unit test for Pokemon Model Class', () {
