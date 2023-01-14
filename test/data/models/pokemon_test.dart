@@ -17,6 +17,7 @@ void main() {
     weight: 100,
     isFavorite: true,
     normalAbility: '',
+    type: 'grass',
   );
 
   group('Unit test for Pokemon Model Class', () {

@@ -51,23 +51,26 @@ class Pokemon extends HiveObject {
   @HiveField(14)
   final String normalAbility;
 
-  Pokemon({
-    this.id,
-    required this.speed,
-    required this.imageUrl,
-    required this.number,
-    required this.name,
-    required this.category,
-    this.isFavorite = false,
-    required this.height,
-    required this.attack,
-    required this.defense,
-    required this.hp,
-    required this.specialAttack,
-    required this.specialDefense,
-    required this.weight,
-    required this.normalAbility,
-  });
+  @HiveField(15)
+  final String type;
+
+  Pokemon(
+      {this.id,
+      required this.speed,
+      required this.imageUrl,
+      required this.number,
+      required this.name,
+      required this.category,
+      this.isFavorite = false,
+      required this.height,
+      required this.attack,
+      required this.defense,
+      required this.hp,
+      required this.specialAttack,
+      required this.specialDefense,
+      required this.weight,
+      required this.normalAbility,
+      required this.type});
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
@@ -89,6 +92,7 @@ class Pokemon extends HiveObject {
     result.addAll({'specialDefence': specialDefense});
     result.addAll({'speed': speed});
     result.addAll({'normalAbility': normalAbility});
+    result.addAll({'type': type});
 
     return result;
   }
@@ -110,6 +114,7 @@ class Pokemon extends HiveObject {
       specialDefense: map['specialDefence']?.toInt() ?? 0,
       speed: map['speed']?.toInt() ?? 0,
       normalAbility: map['abilities'] ?? '',
+      type: map['type'] ?? '',
     );
   }
 
@@ -130,5 +135,6 @@ class Pokemon extends HiveObject {
         specialAttack = map['specialAttack'],
         specialDefense = map['specialDefence'],
         speed = map['speed'],
-        normalAbility = map['normalAbility'];
+        normalAbility = map['normalAbility'],
+        type = map['type'];
 }

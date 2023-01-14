@@ -39,6 +39,7 @@ class PokemonServiceImp extends PokemonService {
             weight: responseBody['weight'],
             speed: responseBody['stats'][5]['base_stat'],
             normalAbility: responseBody['abilities'][0]['ability']['name'],
+            type: responseBody['types'][0]['type']['name'],
           );
 
           pokemons.add(pokemonDetails);
