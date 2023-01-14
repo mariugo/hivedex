@@ -7,7 +7,7 @@ part 'pokemon.g.dart';
 @HiveType(typeId: 0)
 class Pokemon extends HiveObject {
   @HiveField(0)
-  final int? id;
+  late final int? id;
 
   @HiveField(1)
   final String number;
@@ -19,7 +19,7 @@ class Pokemon extends HiveObject {
   final String category;
 
   @HiveField(4)
-  final bool isFavorite;
+  late final bool isFavorite;
 
   @HiveField(5)
   final String imageUrl;
