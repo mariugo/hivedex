@@ -10,16 +10,12 @@ class PokemonServiceImp extends PokemonService {
 
   @override
   Future<List<Pokemon>> getPokemons(int offset) async {
-    //print('this is get services');
     try {
       final response =
           await http.get(Uri.parse('${baseUrl}offset=$offset&limit=$limit'));
-      //print('getting');
       final pokemonsResponse = jsonDecode(response.body) as Map;
       final pokemonsResults = pokemonsResponse['results'] as List;
 
-      // pokemonsResults.forEach((poke) {
-      // });
       final List<Pokemon> pokemons = [];
 
       for (var pokemon in pokemonsResults) {
