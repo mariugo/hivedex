@@ -1,46 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:hivedex/presentation/theme/app_colors.dart';
 
 class AppUtils {
   static Color getColorType(String type) {
     switch (type) {
       case 'grass':
-        return Colors.lightGreen;
+        return AppColors.lightGreen;
       case 'bug':
-        return Colors.lightGreen;
+        return AppColors.lightTeal;
       case 'fire':
-        return Colors.red;
+        return AppColors.red;
       case 'water':
-        return Colors.lightBlue;
+        return AppColors.lightBlue;
       case 'fighting':
-        return Colors.orange;
+        return AppColors.red;
       case 'normal':
-        return Colors.grey[400]!;
+        return AppColors.beige;
       case 'electric':
-        return Colors.yellow[700]!;
+        return AppColors.lightYellow;
       case 'psychic':
-        return Colors.pink;
+        return AppColors.lightPink;
       case 'poison':
-        return Colors.purple;
+        return AppColors.lightPurple;
       case 'ghost':
-        return Colors.purple[900]!;
+        return AppColors.purple;
       case 'ground':
-        return Colors.brown;
+        return AppColors.darkBrown;
       case 'rock':
-        return Colors.brown[400]!;
+        return AppColors.lightBrown;
       case 'dark':
-        return Colors.black87;
+        return AppColors.black;
       case 'dragon':
-        return Colors.deepPurple[800]!;
+        return AppColors.violet;
       case 'fairy':
-        return Colors.pink[300]!;
+        return AppColors.pink;
       case 'flying':
-        return Colors.lightBlue[100]!;
+        return AppColors.lilac;
       case 'ice':
-        return Colors.cyan[200]!;
+        return AppColors.lightCyan;
       case 'steel':
-        return Colors.grey[600]!;
+        return AppColors.grey;
       default:
-        return Colors.white;
+        return AppColors.lightBlue;
     }
   }
 }
