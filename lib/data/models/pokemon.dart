@@ -7,52 +7,52 @@ part 'pokemon.g.dart';
 @HiveType(typeId: 0)
 class Pokemon extends HiveObject {
   @HiveField(0)
-  late final int? id;
+  int? id;
 
   @HiveField(1)
-  final String number;
+  String number;
 
   @HiveField(2)
-  final String name;
+  String name;
 
   @HiveField(3)
-  final String category;
+  String category;
 
   @HiveField(4)
-  late final bool isFavorite;
+  bool isFavorite;
 
   @HiveField(5)
-  final String imageUrl;
+  String imageUrl;
 
   @HiveField(6)
-  final int height;
+  int height;
 
   @HiveField(7)
-  final int weight;
+  int weight;
 
   @HiveField(8)
-  final int hp;
+  int hp;
 
   @HiveField(9)
-  final int attack;
+  int attack;
 
   @HiveField(10)
-  final int defense;
+  int defense;
 
   @HiveField(11)
-  final int specialAttack;
+  int specialAttack;
 
   @HiveField(12)
-  final int specialDefense;
+  int specialDefense;
 
   @HiveField(13)
-  final int speed;
+  int speed;
 
   @HiveField(14)
-  final String normalAbility;
+  String normalAbility;
 
   @HiveField(15)
-  final String type;
+  String type;
 
   Pokemon(
       {this.id,
