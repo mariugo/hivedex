@@ -28,8 +28,7 @@ class PokemonCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Container(
-              color: AppUtils.getColorType(pokemon.type),
+            SizedBox(
               height: 104,
               width: 110,
               child: Image(
