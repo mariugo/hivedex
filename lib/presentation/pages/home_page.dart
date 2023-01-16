@@ -70,7 +70,6 @@ class _HomePageState extends State<HomePage>
                   text: pokemons,
                 ),
                 Tab(
-                  //text: 'Favourites',
                   child: Row(
                     children: [
                       const Text(favorites),
@@ -84,17 +83,14 @@ class _HomePageState extends State<HomePage>
                           final pokemons = box.values.toList().cast<Pokemon>();
                           return Container(
                             decoration: BoxDecoration(
-                                color: const Color(0XFF3558CD),
+                                color: Colors.pink,
                                 borderRadius: BorderRadius.circular(15)),
                             height: 20,
                             width: 20,
                             alignment: Alignment.center,
                             child: Text(
                               pokemons.length.toString(),
-                              style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.white),
+                              style: Theme.of(context).textTheme.headline5,
                             ),
                           );
                         },
