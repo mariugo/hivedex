@@ -5,6 +5,7 @@ import 'package:hivedex/data/models/pokemon.dart';
 import 'package:hivedex/data/repository/pokemon_repository_imp.dart';
 import 'package:hivedex/data/services/pokemon_service_imp.dart';
 import 'package:hivedex/presentation/app.dart';
+import 'package:hivedex/presentation/pages/splash_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,8 +13,21 @@ void main() async {
   Hive.registerAdapter(PokemonAdapter());
   await Hive.openBox<Pokemon>(favoritePokemon);
 
-  runApp(App(
-    pokemonRepositoryImp:
-        PokemonRepositoryImp(pokemonService: PokemonServiceImp()),
-  ));
+  runApp(
+    SplashPage(
+      key: UniqueKey(),
+      onInitComplete: () => runApp(
+        App(
+          pokemonRepositoryImp: PokemonRepositoryImp(
+            pokemonService: PokemonServiceImp(),
+          ),
+        ),
+      ),
+    ),
+  );
+
+  // //App(
+  //   pokemonRepositoryImp:
+  //       PokemonRepositoryImp(pokemonService: PokemonServiceImp()),
+  // )
 }
