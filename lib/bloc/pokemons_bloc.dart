@@ -31,7 +31,7 @@ class PokemonsBloc extends Bloc<PokemonsEvent, PokemonsState> {
     );
 
     await pokemonRepository.getPokemon(offset).then((newPokemons) {
-      offset = offset + 5;
+      offset = offset + 21;
       final pokemons = (state as PokemonLoading).pokemons;
       pokemons.addAll(newPokemons);
       emit(
