@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:hivedex/data/models/pokemon.dart';
+import 'package:hivedex/presentation/pages/pokemon_details_page.dart';
 import 'package:hivedex/utils/app_utils.dart';
 
 class PokemonCard extends StatelessWidget {
@@ -14,7 +15,10 @@ class PokemonCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context)
+            .pushNamed(PokemonDetail.id, arguments: {'pokemon': pokemon});
+      },
       child: Container(
         height: 186,
         width: 110,
