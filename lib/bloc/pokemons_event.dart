@@ -11,11 +11,7 @@ class GetPokemons extends PokemonsEvent {
 
 class SwitchFavoritePokemon extends PokemonsEvent {
   final Pokemon pokemon;
-
-  SwitchFavoritePokemon({
-    required this.pokemon,
-  });
-
+  SwitchFavoritePokemon(this.pokemon);
   @override
   List<Object?> get props => [pokemon];
 }
